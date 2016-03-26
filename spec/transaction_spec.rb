@@ -19,7 +19,7 @@ describe Mint2qif::Transaction do
     it "translates a Mint CSV line" do
       expect(transaction.to_hash).to eq(
         date: "09/10/2015",
-        amount: "-100.00",
+        amount: "-100.0",
         status: "c",
         payee: "test transaction",
         memo: "TEST TRANSACTION 123456789",
