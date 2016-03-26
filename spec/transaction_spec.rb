@@ -8,7 +8,7 @@ describe Mint2qif::Transaction do
       original_description: "TEST TRANSACTION 123456789",
       amount: "100.00",
       transaction_type: "debit",
-      category: "Books & Supplies",
+      category: "Tolls",
       account_name: "Chase Checking ",
       labels: "A",
       notes: "b"
@@ -23,7 +23,7 @@ describe Mint2qif::Transaction do
         status: "c",
         payee: "test transaction",
         memo: "TEST TRANSACTION 123456789",
-        category: "Education:Books & Supplies"
+        category: "Auto & Transport:Tolls"
       )
     end
   end
