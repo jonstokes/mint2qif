@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "mint2qif"
+
+if Mint2qif::Arguments.invalid? || Mint2qif::Arguments.help?
+  puts "usage:"
+  puts "  mint2qif -i <input_file> -o <output_directory> -c <custom_categories.yml>"
+else
+  Mint2qif.convert(
+    input_file:       Mint2qif::Arguments.input_file,
+    output_directory: Mint2qif::Arguments.output_directory,
+    categories_file:  Mint2qif::Arguments.custom_categories_file
+  )
+end
