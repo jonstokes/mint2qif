@@ -14,7 +14,28 @@ module Mint2qif
     end
 
     def self.categories
-      @@categories ||= YAML.load_file(File.join(Mint2qif.root, "lib", "mint2qif", "categories.yml"))
+      @@categories ||= begin
+        cats = default_categories.dup
+        custom_categories.each do |category, subcategories|
+          next unless subcategories.any?
+          cats[category] ||= []
+          cats[category] += subcategories
+          cats[category].uniq!
+        end
+        cats
+      end
+    end
+
+    def self.default_categories
+      @@default_categories ||= YAML.load_file(File.join(Mint2qif.root, "lib", "mint2qif", "categories.yml"))
+    end
+
+    def self.custom_categories
+      @@custom_categories ||= if Mint2qif::Arguments.custom_categories_file
+        YAML.load_file(Mint2qif::Arguments.custom_categories_file)
+      else
+        {}
+      end
     end
   end
 end
