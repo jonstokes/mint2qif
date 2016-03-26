@@ -21,7 +21,7 @@ module Mint2qif
     def write_files
       output.each do |account_name, transactions|
         Qif::Writer.open("#{account_name}.qif", type = 'Bank', format = 'dd/mm/yyyy') do |qif|
-          transaction.each do |transaction|
+          transactions.each do |transaction|
             qif << Qif::Transaction.new(transaction.to_hash)
           end
         end
