@@ -6,7 +6,11 @@ module Mint2qif
     attr_reader :bank_input
 
     def initialize(file:)
-      @bank_input = CSV.read(file)
+      @bank_input = CSV.read(
+        headers: true,
+        converters: :all,
+        header_converters: lambda { |h| h.downcase.gsub(' ', '_') }
+      )
       @output = {}
     end
 

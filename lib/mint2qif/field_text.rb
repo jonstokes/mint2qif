@@ -1,7 +1,7 @@
 module Mint2qif
   class FieldText < Virtus::Attribute
     def coerce(value)
-      value.strip
+      value.gsub(/^\s+|\s+$/,'')
     end
   end
 end

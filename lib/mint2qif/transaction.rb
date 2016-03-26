@@ -8,22 +8,22 @@ module Mint2qif
     include Virtus.model
 
     attribute :date,                 Mint2qif::FieldText
-    attribute :description,          Mint2qif::MemoText
-    attribute :original_description, Mint2qif::MemoText
+    attribute :description,          Mint2qif::FieldText
+    attribute :original_description, Mint2qif::FieldText
     attribute :amount,               Mint2qif::FieldText
     attribute :transaction_type,     Mint2qif::FieldText
     attribute :category,             Mint2qif::Category
-    attribute :account_name
+    attribute :account_name,         Mint2qif::FieldText
     attribute :labels
     attribute :notes
 
     def to_hash
       {
-        date: date,
-        amount: signed_amount,
-        status: nil,
-        payee: description,
-        memo: original_description,
+        date:     date,
+        amount:   signed_amount,
+        status:   "c",
+        payee:    description,
+        memo:     original_description,
         category: category
       }
     end

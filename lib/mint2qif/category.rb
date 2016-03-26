@@ -6,11 +6,15 @@ module Mint2qif
       value.strip!
       return value if categories.keys.include?(value)
       raise "Unknown category #{value}" unless category = categories.detect { |k, v| v.include?(value) }
-      "#{category}:#{value}"
+      "#{category.first}:#{value}"
+    end
+
+    def categories
+      Mint2qif::Category.categories
     end
 
     def self.categories
-      @@categories ||= YAML.load_file("categories.yml")
+      @@categories ||= YAML.load_file(File.join(Mint2qif.root, "lib", "mint2qif", "categories.yml"))
     end
   end
 end
