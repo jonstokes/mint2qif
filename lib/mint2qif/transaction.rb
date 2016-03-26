@@ -10,7 +10,7 @@ module Mint2qif
     attribute :date,                 Mint2qif::FieldText
     attribute :description,          Mint2qif::FieldText
     attribute :original_description, Mint2qif::FieldText
-    attribute :amount,               Mint2qif::FieldText
+    attribute :amount,               Float
     attribute :transaction_type,     Mint2qif::FieldText
     attribute :category,             Mint2qif::Category
     attribute :account_name,         Mint2qif::FieldText

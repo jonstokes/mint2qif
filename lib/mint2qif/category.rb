@@ -5,7 +5,7 @@ module Mint2qif
     def coerce(value)
       value.strip!
       return value if categories.keys.include?(value)
-      raise "Unknown category #{value}" unless category = categories.detect { |k, v| v.include?(value) }
+      raise "Unknown category #{value}" unless category = categories.detect { |k, v| v && v.include?(value) }
       "#{category.first}:#{value}"
     end
 

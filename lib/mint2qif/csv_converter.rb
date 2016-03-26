@@ -3,14 +3,16 @@ require 'qif'
 
 module Mint2qif
   class CsvConverter
-    attr_reader :bank_input
+    attr_reader :bank_input, :output, :output_directory
 
-    def initialize(file:)
+    def initialize(input_file:, output_directory:)
       @bank_input = CSV.read(
+        input_file,
         headers: true,
         converters: :all,
         header_converters: lambda { |h| h.downcase.gsub(' ', '_') }
       )
+      @output_directory = output_directory
       @output = {}
     end
 
@@ -24,7 +26,7 @@ module Mint2qif
 
     def write_files
       output.each do |account_name, transactions|
-        Qif::Writer.open("#{account_name}.qif", type = 'Bank', format = 'dd/mm/yyyy') do |qif|
+        Qif::Writer.open(File.join(output_directory, "#{account_name}.qif"), type = 'Bank', format = 'mm/dd/yyyy') do |qif|
           transactions.each do |transaction|
             qif << Qif::Transaction.new(transaction.to_hash)
           end
