@@ -7,9 +7,10 @@ if Mint2qif::Arguments.invalid? || Mint2qif::Arguments.help?
   puts "usage:"
   puts "  mint2qif -i <input_file> -o <output_directory> -c <custom_categories.yml>"
 else
-  Mint2qif.convert(
-    input_file:       Mint2qif::Arguments.input_file,
-    output_directory: Mint2qif::Arguments.output_directory,
-    categories_file:  Mint2qif::Arguments.custom_categories_file
-  )
+  Mint2qif.configure do |config|
+    config.input_file = Mint2qif::Arguments.input_file
+    config.output_directory = Mint2qif::Arguments.output_directory
+    config.custom_categories_file = Mint2qif::Arguments.custom_categories_file
+  end
+  Mint2qif.convert
 end

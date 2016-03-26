@@ -23,7 +23,7 @@ module Mint2qif
       return unless input = ARGV.detect do |arg|
         arg["-c"]
       end
-      input.split("-c").last.strip
+      ARGV[ARGV.index("-c") + 1]
     end
 
     def self.invalid?

@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe Mint2qif::Transaction do
+  before do
+    Mint2qif.configure do |config|
+      config.custom_categories_file = "spec/fixtures/custom_categories.yml"
+    end
+  end
+
   context "translation" do
     let(:line) {{
       date: "09/10/2015",
