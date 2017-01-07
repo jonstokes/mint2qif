@@ -13,10 +13,15 @@ module Mint2qif
     def output_directory; Mint2qif.configuration.output_directory; end
 
     def split_accounts
-      bank_input.each do |line|
-        transaction = Mint2qif::Transaction.new(line)
-        @output[transaction.account_name] ||= []
-        @output[transaction.account_name] << transaction
+      bank_input.each_with_index do |line, index|
+        begin
+          transaction = Mint2qif::Transaction.new(line)
+          @output[transaction.account_name] ||= []
+          @output[transaction.account_name] << transaction
+        rescue Exception => e
+          puts "ERROR, Line #{index + 2}: #{line}"
+          puts "   message: #{e.message}"
+        end
       end
     end
 
