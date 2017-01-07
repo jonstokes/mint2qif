@@ -1,7 +1,7 @@
 "Auto & Transport":
  - Car Wash/Detail
  - Parking Tickets
- - Tolls
+ - Tolls: ['BMW Tolls', 'Toyota Tolls']
  - Vehicle Registration
 "Bills & Utilities":
   - Trash Service

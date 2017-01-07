@@ -32,5 +32,17 @@ describe Mint2qif::Transaction do
         category: "Auto & Transport:Tolls"
       )
     end
+
+    it "Maps a Mint category to an internal category" do
+      line[:category] = "BMW TOLLS"
+      expect(transaction.to_hash).to eq(
+        date: "09/10/2015",
+        amount: "-100.0",
+        status: "c",
+        payee: "test transaction",
+        memo: "TEST TRANSACTION 123456789",
+        category: "Auto & Transport:Tolls"
+      )
+    end
   end
 end
