@@ -1,14 +1,161 @@
 "Auto & Transport":
+ - Auto Insurance
+ - Auto Payment
+ - Gas & Fuel
+ - Parking
+ - Public Transportation
+ - Service & Parts
  - Car Wash/Detail
  - Parking Tickets
- - Tolls: ['BMW Tolls', 'Toyota Tolls']
+ - Tolls
  - Vehicle Registration
 "Bills & Utilities":
-  - Trash Service
+  - Home Phone
+  - Internet
+  - Mobile Phone
+  - Television
+  - Utilities
   - Gas
+  - Trash Service
   - Water/Electricity
 "Business Services":
+  - Advertising
+  - Legal
+  - Office Supplies
+  - Printing
+  - Shipping
   - Business Travel
   - Cloud Services
   - Computer Hardware
   - Computer Software
+  - Social Work Fees
+  - Startup
+Education:
+  - Books & Supplies
+  - Student Loan
+  - Tuition
+  - Spanish Lessons
+Entertainment:
+  - Amusement: ["SUP"]
+  - Arts
+  - Movies & DVDs
+  - Music
+  - Newspapers & Magazines
+  - Video Games
+"Fees & Charges":
+  - ATM Fee
+  - Bank Fee
+  - Finance Charge
+  - Late Fee
+  - Service Fee
+  - Trade Commissions
+Financial:
+  - Financial Advisor
+  - Life Insurance
+  - Bookkeeping: ["Financial Software"]
+  - Investment Account
+"Food & Dining":
+  - Alcohol & Bars
+  - Coffee Shops
+  - Fast Food
+  - Groceries
+  - Restaurants
+"Gifts & Donations":
+  - Charity
+  - Gift
+  - Tithes and Offerings
+"Health & Fitness":
+  - Dentist
+  - Doctor
+  - Eyecare
+  - Gym
+  - Health Insurance
+  - Pharmacy
+  - Sports
+  - Allergies
+  - Therapist
+Home:
+  - Furnishings
+  - Home Improvement
+  - Home Insurance
+  - Home Services
+  - Home Supplies
+  - Lawn & Garden
+  - Mortgage & Rent
+  - American Watercare
+  - House Cleaning
+  - House Sitting
+  - Moving Expenses
+  - Photos
+  - Pool
+  - Remodel
+Income:
+  - Bonus
+  - Interest Income
+  - Paycheck
+  - Reimbursement
+  - Rental Income
+  - Returned Purchase
+Kids:
+  - Allowance
+  - Baby Supplies
+  - Babysitter & Daycare
+  - Child Support
+  - Activities
+  - Toys
+  - Holiday Expenses
+  - Music Lessons
+  - Speech Therapy
+Loans:
+  - Loan Fees and Charges
+  - Loan Insurance
+  - Loan Interest
+  - Loan Payment
+  - Loan Principal
+"Misc Expenses":
+  - Drip
+  - Paper Hat Press
+  - You Are Still You
+"Personal Care":
+  - Hair
+  - Laundry
+  - Spa & Massage
+  - Beauty - Nails/Skin
+Pets:
+  - Pet Food & Supplies
+  - Pet Grooming
+  - Veterinary
+  - Dog Boarding
+  - Dog Training
+  - Dog Walker
+  - Fish
+  - Horse
+Shopping:
+  - Books
+  - Clothing
+  - Electronics & Software
+  - Hobbies
+  - Sporting Goods
+  - Amazon.com
+  - Shopping Christina
+  - Shopping Jon
+  - Shopping Kids
+Taxes:
+  - Federal Tax
+  - Local Tax
+  - Property Tax
+  - Sales Tax
+  - State Tax
+  - CPA Services
+Transfer:
+  - Credit Card Payment
+  - Transfer for Cash Spending
+  - First Republic
+Travel:
+  - Air Travel
+  - Hotel
+  - Rental Car & Taxi
+  - Vacation
+Uncategorized:
+  - Cash & ATM
+  - Check
