@@ -34,7 +34,7 @@ describe Mint2qif::Transaction do
     end
 
     it "Maps a Mint category to an internal category" do
-      line[:category] = "BMW TOLLS"
+      line[:category] = "Tolls"
       expect(transaction.to_hash).to eq(
         date: "09/10/2015",
         amount: "-100.0",
