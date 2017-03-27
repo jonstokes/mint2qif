@@ -13,15 +13,6 @@ module Mint2qif
       @input_file = val
     end
 
-    def bank_input
-      @bank_input ||= CSV.read(
-        input_file,
-        headers: true,
-        converters: :all,
-        header_converters: lambda { |h| h.downcase.gsub(' ', '_') }
-      )
-    end
-
     def categories
       @categories ||= begin
         cats = default_categories.dup

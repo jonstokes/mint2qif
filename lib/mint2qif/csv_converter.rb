@@ -3,12 +3,21 @@ require 'qif'
 
 module Mint2qif
   class CsvConverter
-    attr_reader :output, :bank_input, :output_directory
+    attr_reader :output, :input_file, :output_directory
 
     def initialize(args={})
       @output = {}
-      @bank_input = args.fetch(:bank_input, Mint2qif.configuration.bank_input)
+      @input_file = args.fetch(:input_file, Mint2qif.configuration.input_file)
       @output_directory = args.fetch(:output_directory, Mint2qif.configuration.output_directory)
+    end
+
+    def bank_input
+      @bank_input ||= CSV.read(
+        input_file,
+        headers: true,
+        converters: :all,
+        header_converters: lambda { |h| h.downcase.gsub(' ', '_') }
+      )
     end
 
     def split_accounts
